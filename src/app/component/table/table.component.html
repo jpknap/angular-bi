@@ -1,0 +1,30 @@
+
+<table mdbTable mdbTableScroll  [scrollY]="true" [responsive]="true" maxHeight="400" [bordered]="true">
+  <thead class="sticky-top">
+    <tr style="background-color: whitesmoke;">
+      <th *ngFor="let head of headElements;  let i = index" scope="col"> {{ head.replace('i','')}}
+        
+      </th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr mdbTableCol *ngFor="let el of elements">
+      <th scope="row">{{el.id}}</th>
+      <td style="width:190px !important"><small style="font-size: 9pt;">{{el.date}}</small></td>
+      <td>{{el.i7}}</td>
+      <td>{{el.i10}}</td>
+      <td>{{el.i16}}</td>
+      <td>{{el.i20}}</td>
+      <td>{{el.i25}}</td>
+      <td>{{el.i26}}</td>
+      <td>{{el.i30}}</td>
+      <td>{{el.i32}}</td>
+      <td>{{el.i34}}</td>
+      <td>{{el.i39}}</td>
+      <td>{{el.i40}}</td>
+      <td>{{el.i41}}</td>
+      <td>{{el.i48}}</td>
+      <td>{{el.total}}</td>
+    </tr>
+  </tbody>
+</table>

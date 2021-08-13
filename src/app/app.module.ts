@@ -1,18 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { WavesModule, TableModule, IconsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
+import { LinealchartComponent } from './component/linealchart/linealchart.component';
+import { TableComponent } from './component/table/table.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
-    AppComponent
+    DashboardComponent,
+    LinealchartComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule,
+    WavesModule,
+    TableModule,
+    IconsModule,
+    MDBBootstrapModule.forRoot(),
+    FontAwesomeModule,
   ],
+  exports: [LinealchartComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [DashboardComponent]
 })
 export class AppModule { }
