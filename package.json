@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "engines": {
     "npm": "7.x",
-    "node": "14.x"
+    "node": "14.x",
+    "express": "4.x",
+    "cors": "2.x"
+
   },
   "scripts": {
     "ng": "ng",
