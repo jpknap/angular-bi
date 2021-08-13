@@ -22,10 +22,12 @@ export class TableComponent implements OnInit, OnChanges{
     });
     this.headElements = ['#','Fechas',...aux_enterprises, 'Total']
     const aux_elements = []
+    const aux_header = ['#','Fechas',...aux_enterprises]
     this.data.forEach((element, index) => {
       let obj = {}
       let  acc = 0
-      this.headElements.forEach((item) => {
+      let items = []
+      aux_header.forEach((item) => {
         if(item === '#') {
           obj['id'] = index;
         }
@@ -39,17 +41,20 @@ export class TableComponent implements OnInit, OnChanges{
           element.sales.forEach(i => {
             if(item =="i"+i.enterprise)  {
               obj[item] = i.total_sale
+              items.push(i.total_sale)
               acc+= i.total_sale
               assignated = true
               return
             }         
           });
           if(!assignated){
+            items.push(0)
             obj[item] = 0
           }
         }
       });
       obj['total'] = acc
+      obj['items'] = items
       aux_elements.push(obj);
     });
     this.elements = aux_elements
