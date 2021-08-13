@@ -32,7 +32,7 @@ export class TableComponent implements OnInit, OnChanges{
         else if(item === 'Fechas') {
           const dateStart = new Date(element.date_start)
           const dateEnd = new Date(element.date_end)
-          obj['date'] = `${dateStart.getDate() + "/"+ dateStart.getMonth()+ "/" +dateStart.getFullYear()} - ${dateEnd.getDate() + "/"+ dateEnd.getMonth()+ "/" +dateEnd.getFullYear()}`;
+          obj['date'] = `${dateStart.getDate() + "/"+ (dateStart.getMonth()+1)+ "/" +dateStart.getFullYear()} - ${dateEnd.getDate() + "/"+ (dateEnd.getMonth()+1)+ "/" +dateEnd.getFullYear()}`;
         }
         else{
           let assignated = false;
